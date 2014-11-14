@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="user-box">
+  <%= image_tag @post.user.avatar.url(:thumb), class: 'profile' %>
+  <%= link_to @post.user.name, users_show_path(@post.user.id) %>
+</div>
+<p>
+<%= image_tag @post.avatar.url(:thumb), class: 'profile' %>
+<%= @post.content %>
+</p>
+
+<%= render 'shared/form' %>
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
