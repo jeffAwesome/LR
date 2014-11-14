@@ -4,6 +4,8 @@ gem 'rails', '4.0.2'
 gem 'pg'
 
 
+gem 'rails_12factor', group: :production
+
 #Avatar
 gem 'paperclip', '~> 4.2.0'
 
