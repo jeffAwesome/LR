@@ -4,6 +4,10 @@ LR::Application.routes.draw do
 
   get "users/index"
   get "users/show"
+  get 'follow' => 'users#follow'
+  get 'unfollow' => 'users#unfollow'
+  get 'like' => 'users#like'
+  get 'unlike' => 'users#unlike'
   devise_for :users
 
   get "home/index"

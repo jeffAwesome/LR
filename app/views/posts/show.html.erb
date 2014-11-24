@@ -1,15 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user-box">
-  <%= image_tag @post.user.avatar.url(:thumb), class: 'profile' %>
+  <%= image_tag @post.user.avatar.url(:thumb), class: 'profile small' %>
   <%= link_to @post.user.name, users_show_path(@post.user.id) %>
 </div>
 <p>
-<%= image_tag @post.avatar.url(:thumb), class: 'profile' %>
+
+<% unless @post.avatar.url == "avatar/missing.jpg" %>
+  <%= image_tag @post.avatar.url(:thumb), class: 'profile small' %>
+<% end %>
+
 <%= @post.content %>
 </p>
+<%= render 'shared/like_form', likeable: @post %>
+<%= link_to pluralize(@comments.count, 'comment'), @post, class: 'comments' %>
 
 <%= render 'shared/form' %>
+<ul>
 <% @comments.each do |comment| %>
-  <%= comment.content %>
+  <li>
+    <%= render 'shared/like_form', likeable: comment %>
+    <%= image_tag comment.user.avatar.url(:thumb), class: 'profile small' %>
+    <%= comment.content %>
+  </li>
 <% end %>
+</ul>
