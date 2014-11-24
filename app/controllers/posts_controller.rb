@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
+    @post.create_activity :create, owner: current_user
     respond_with(@post)
   end
 

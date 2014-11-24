@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment = Comments.new(comments_params)
     @comment.user_id = @post.user_id
     @comment.save
+    @comment.create_activity :create, owner: current_user
     redirect_to @post
   end
   # Never trust parameters from the scary internet, only allow the white list through.

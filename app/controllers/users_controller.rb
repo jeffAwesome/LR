@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.id, owner_type: "User")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

@@ -3,10 +3,30 @@
 
 <div class="right">
 <% if user_signed_in? %>
-<%= render 'shared/follow_form' , user: @user%>
+  <%= render 'shared/follow_form' , user: @user%>
 <% end %>
 </div>
 <span class="left">
-<h4><%= @user.name %></h4>
+  <h4><%= @user.name %></h4>
 </span>
+<br />
+<br />
+<section>
+  <h3>Recent Activity</h3>
+  <% if @activities.count %>
+    <% @activities.each do |activity| %>
+      <div class="activity">
+        <% if activity.trackable_type == "Comments" %>
+          Comment:
+          <%= activity.trackable.content %>
+        <% else %>
+         Post: 
+         <%= activity.trackable.content %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <h3>There is no activity</h3>
+  <% end %>
+</section>
 

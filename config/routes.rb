@@ -3,7 +3,7 @@ LR::Application.routes.draw do
   resources :comments
 
   get "users/index"
-  get "users/show"
+  get "users/show/:id" => "users#show"
   get 'follow' => 'users#follow'
   get 'unfollow' => 'users#unfollow'
   get 'like' => 'users#like'

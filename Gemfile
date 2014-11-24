@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'pg'
 
-
 gem 'rails_12factor', group: :production
 
 #Avatar
@@ -14,6 +13,7 @@ gem 'devise', '~> 3.4.1'
 
 # social interaction
 gem 'socialization', '~> 1.1.0'
+gem 'public_activity'
 
 
 #Assets
