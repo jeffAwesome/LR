@@ -1,0 +1,22 @@
+%h1 Users#show
+%p Find me in app/views/users/show.html.erb
+.right
+  - if user_signed_in?
+    = render 'shared/follow_form' , user: @user
+%span.left
+  %h4= @user.name
+%br/
+%br/
+%section
+  %h3 Recent Activity
+  - if @activities.count
+    - @activities.each do |activity|
+      .activity
+        - if activity.trackable_type == "Comments"
+          Comment:
+          \#{activity.trackable.content}
+        - else
+          Post:
+          \#{activity.trackable.content}
+  - else
+    %h3 There is no activity

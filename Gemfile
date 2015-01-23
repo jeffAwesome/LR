@@ -20,9 +20,25 @@ gem 'public_activity'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'zurb-foundation', '~> 4.3.2'
 
+# DUMI: I don't think we need this
+#gem 'zurb-foundation', '~> 4.3.2'
+
+
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.3'
+
+# Haml
+gem 'haml', '~> 4.0.6'
+gem 'haml-rails', '~> 0.7.0'
+
+# Font-awesome 
+gem 'font-awesome-sass', '~> 4.2.2'
 gem 'jquery-rails'
+
+# Modernizr
+gem 'modernizr-rails', '~> 2.7.1'
+
 
 gem 'turbolinks'
 
@@ -45,3 +61,11 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Testing
+group :development, :test do
+	gem 'rspec-rails', '~> 3.1.0'
+end
+group :test do
+	gem 'capybara', '~> 2.4.4'
+end

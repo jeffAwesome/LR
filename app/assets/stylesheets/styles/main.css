@@ -1,0 +1,35 @@
+/**
+ * CSS file for styling cutouts of LoveRealm views
+ *
+ * Author: Vladimir Dumitraskovic / smesko85@live.com
+ *  
+ */
+
+
+
+/**
+ * Typography
+ *
+ * Headings: Libre Baskerville
+ * Body text: Open Sans
+ */
+
+
+/* Google webfonts import */
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext);
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Libre Baskerville", serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+
+/**
+ * Colors
+ *
+ * Colours: Red (#C8140F), Black (#000000), Light Ash (#DADADE), Deep ash (#535156)
+ */

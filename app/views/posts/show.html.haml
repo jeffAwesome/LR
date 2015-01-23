@@ -1,0 +1,17 @@
+%p#notice= notice
+.user-box
+  = image_tag @post.user.avatar.url(:thumb), class: 'profile small'
+  = link_to @post.user.name, "/users/show/#{@post.user.id}"
+%p
+  - unless @post.avatar.url == "avatar/missing.jpg"
+    = image_tag @post.avatar.url(:thumb), class: 'profile small'
+  = @post.content
+= render 'shared/like_form', likeable: @post
+= link_to pluralize(@comments.count, 'comment'), @post, class: 'comments'
+= render 'shared/form'
+%ul
+  - @comments.each do |comment|
+    %li
+      = render 'shared/like_form', likeable: comment
+      = image_tag comment.user.avatar.url(:thumb), class: 'profile small'
+      = comment.content

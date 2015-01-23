@@ -1,0 +1,20 @@
+/**
+ * Components
+ */
+
+.main-ui__button-back,
+.main-ui__button-logo {
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 3em;
+	height: 3em;
+}
+
+.main-ui__button-back {
+	background-image: url("../images/icons/047-128.png");
+}
+
+.main-ui__button-logo {
+	background-image: url("../images/icons/LogoElement.png");
+}

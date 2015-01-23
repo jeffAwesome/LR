@@ -1,0 +1,134 @@
+/**
+ * Login screen
+ */
+
+$login-screen-ui-size: 18.5em;
+
+.login-screen {
+	border-top: 4px solid $LR-red;
+}
+
+
+.form-signup,
+.form-signin {
+	text-align: center;
+}
+
+
+.form-signup__heading,
+.form-signin__heading {
+	margin-top: 2em;
+	margin-bottom: 0.75em;
+}
+
+
+.form-signup__intro,
+.form-signin__intro {
+	color: $LR-deep-ash;
+	line-height: 1.75;
+	margin-bottom: 2em;
+	font-size: $font-size-large;
+}
+
+
+.form-signup__btn,
+.form-signin__btn {
+	text-transform: uppercase;
+	padding: 1em;
+	margin: 0 auto;
+}
+
+.form-signup__btn {
+	max-width: $login-screen-ui-size;
+}
+
+.form-signin__btn {
+	width: 60%;
+	max-width: $login-screen-ui-size/2;
+}
+
+
+.form-signup__btn-facebook,
+.form-signin__btn-facebook {
+	text-transform: uppercase;
+	padding: 1em;
+	max-width: $login-screen-ui-size;
+	margin: 0 auto;
+	border-color: $LR-facebook;
+	background-color: $LR-facebook;
+	color: white;
+	
+	/* increasing specificity from bootstrap with another .btn */
+	&.btn {
+	    margin-top: 0.75em;
+	}
+
+	&.btn:hover, &.btn:focus {
+		border-color: $LR-facebook;
+		color: white;
+		background-color: darken($LR-facebook,10%);
+	}
+
+}
+
+.form-signup__btn-facebook .fa,
+.form-signin__btn-facebook .fa {
+	font-size: larger;
+}
+
+
+.form-signup__footer {
+	color: $LR-deep-ash;
+	font-size: smaller;
+	max-width: 50%;
+	margin: 5em auto;
+}
+
+
+.form-signup__footer-icon {
+	background-image: url("../images/icons/basics-08-128.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	width: 5em;
+	height: 5em;
+	margin: 0 auto;
+}
+
+
+.form-signin__intro {
+	font-size: $font-size-base;
+	margin-bottom: 4em;
+
+}
+
+.form-signin__rule {
+	position: relative;
+	color: $LR-light-ash;
+	margin: 3em 0;
+
+	&:after {
+		content: "OR";
+
+		position: absolute;
+		top: -0.5em; bottom: 0 ; left: 0; right: 0;
+		margin: auto;
+		background: white;
+		width: 2.5em;
+	}
+}
+
+
+.form-signin__form > input {
+	max-width: $login-screen-ui-size;
+	color: $LR-red;
+	border-color: $LR-red;
+	padding: 1em;
+	margin: 1em auto;
+}
+
+
+.form-signin__form > input::placeholder {
+	text-transform: uppercase;
+	color: $LR-red;
+}
