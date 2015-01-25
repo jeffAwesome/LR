@@ -1,3 +1,7 @@
-.contain-to-grid.sticky
-  %nav.top-bar{"data-options" => "sticky_on: large", "data-topbar" => "", :role => "navigation"}
-    %a{:href => "#"} The nav
+.container
+  .row
+    / %nav{"data-options" => "sticky_on: large", "data-topbar" => "", :role => "navigation"}
+    %nav{:role => "navigation"}
+      %a{:href => "#"} The nav
+      - if user_signed_in?
+        = link_to "Log out", destroy_user_session_path, method: "delete"

@@ -1,17 +1,43 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%section.login-screen.row
+  .form-signup.col-sm-7.hidden-xs
+    %h2.form.signup__heading LoveRealm
+    %p.form-signup__intro Connect with millions of Christians across the globe <br>Encourage each other.
+
+    %a.form-signup__btn.btn.btn-lg.btn-primary.btn-block Connect with e-mail
+    %a.form-signup__btn-facebook.btn.btn-lg.btn-primary.btn-block 
+      %i.fa.fa-facebook 
+      Connect with facebook
+    
+    %p.form-signup__footer
+      Real christians do not spam; neither do they post stuff to Facebook without your permission. We're Christians!
+
+    %a.form-signup__footer-icon
+            
+
+  .form-signin.col-sm-5
+    %h2.form-signin__heading Login to LoveRealm
+    %p.form-signin__intro You're just a step away from <br> connecting with Christians worldwide
+    
+    %a.form-signin__btn-facebook.btn.btn-lg.btn-primary.btn-block
+      %i.fa.fa-facebook
+      Connect with facebook
+
+    %hr.form-signin__rule
+
+    
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "form-signin__form"}) do |f|
+      = f.label :email, class: "sr-only"
+      = f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: "E-mail"
+
+      = f.label :password, class: "sr-only"
+      = f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password"
+
+
+      = f.button "Connect", class: "form-signin__btn btn btn-lg btn-default btn-block"
+
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+    = render "devise/shared/links"
